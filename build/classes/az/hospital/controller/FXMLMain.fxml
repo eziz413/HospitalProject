@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="592.0" prefWidth="753.0" styleClass="image" stylesheets="@../../../background/StyleSheet.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.hospital.controller.FXMLMainController">
+   <children>
+      <TableView fx:id="DoctorTable" layoutX="145.0" layoutY="195.0" onMouseClicked="#editDoctors" prefHeight="383.0" prefWidth="569.0" style="-fx-background-color: transparant;">
+        <columns>
+          <TableColumn fx:id="columnAd" prefWidth="75.0" text="Ad" />
+          <TableColumn fx:id="columnSoyad" prefWidth="81.0" text="Soyad" />
+            <TableColumn fx:id="columnAtaadi" prefWidth="77.0" text="Ata adı" />
+            <TableColumn fx:id="columnDob" prefWidth="83.0" text="Date of Birth" />
+            <TableColumn fx:id="columnElmiDerece" prefWidth="82.0" text="Elmi Derece" />
+            <TableColumn fx:id="columnİxtisas" prefWidth="89.0" text="İxtisas" />
+            <TableColumn fx:id="columnDepartment" prefWidth="81.0" text="Department" />
+        </columns>
+      </TableView>
+      <Label layoutX="359.0" layoutY="11.0" prefHeight="33.0" prefWidth="140.0" text="Doctors table">
+         <font>
+            <Font name="Arial Italic" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="LoadDoctorsBtn" layoutX="14.0" layoutY="53.0" mnemonicParsing="false" onAction="#actionLoadDoctors" prefHeight="91.0" prefWidth="112.0" styleClass="dd" stylesheets="@../../../background/StyleSheet.css">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="addDoctorsBtn" layoutX="14.0" layoutY="182.0" mnemonicParsing="false" onAction="#addDoctorsView" prefHeight="91.0" prefWidth="112.0" styleClass="add" stylesheets="@../../../background/StyleSheet.css">
+         <font>
+            <Font name="Arial Italic" size="17.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchInput" layoutX="551.0" layoutY="86.0" onKeyReleased="#simpleSearch" prefHeight="25.0" prefWidth="174.0" promptText="search..." />
+      <Pane layoutX="150.0" layoutY="53.0" prefHeight="135.0" prefWidth="351.0" style="-fx-background-color: lightblue;" styleClass="bodybg" stylesheets="@../../../background/StyleSheet.css">
+         <children>
+            <ComboBox fx:id="doctorCombo" layoutX="179.0" layoutY="30.0" prefWidth="150.0" />
+            <ComboBox fx:id="departmentCombo" layoutX="7.0" layoutY="30.0" onAction="#loadDoctorsBySearch" prefWidth="150.0" />
+            <Button fx:id="searchBtn" layoutX="254.0" layoutY="89.0" mnemonicParsing="false" onAction="#advancedsearch" prefHeight="25.0" prefWidth="74.0" text="Search" />
+         </children>
+      </Pane>
+      <Label layoutX="22.0" layoutY="27.0" prefHeight="25.0" prefWidth="83.0" text="Load Doctors" />
+      <Label layoutX="22.0" layoutY="157.0" prefHeight="25.0" prefWidth="83.0" text="Add Doctors" />
+   </children>
+</AnchorPane>
